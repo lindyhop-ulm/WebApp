@@ -1,0 +1,61 @@
+*{margin: 0;
+  padding: 0;
+  box-sizing: border-box;}
+html{margin:0; padding:0}
+body{font: 76% arial,sans-serif;
+   text-align:center;
+   background-color:rgb(137, 114, 154);
+   margin:0;
+   padding:0;}
+p{margin:0; border-color:#000000;
+  text-align:center; color: rgb(13, 13, 13);
+  font-size: 10pt;}
+a{padding:5px; 
+text-decoration:underline; 
+color:#000000;}
+h1{text-align:center; 
+  font-family:broadway;
+  font-size: 28pt;
+  text-decoration: underline;
+margin-bottom: 0cm;
+background-color:#a68bc0bc;}
+h2{text-align:center; 
+  font-family:broadway;
+  font-size: 20pt;
+margin-bottom: 1cm; margin-top:1cm;}
+#unter3{text-align: center;
+    font-family: broadway; 
+    font-size: 18pt;
+    text-decoration: underline; 
+      margin-bottom: 20pt;}
+div#header{text-align: center;}
+div#navigator{float:right;width:100px; margin-top:36pt; margin-right: 100pt; background-color:#a68bc0bc;}
+div#navigator p{text-align:left; font-size: 12pt;}
+div#container{text-align:center;}
+div#content p{text-align:center}
+div#posts{text-align:center;
+       margin-top:0cm;}
+ul{padding:0; 
+ list-style-type:none;
+  text-align:center;  
+  color:rgb(12, 13, 15); 
+  margin-top:1cm; 
+  margin-bottom: 3cm;}
+li{margin-bottom:5px;
+  text-align:center;
+  font-size:12pt;}
+.background-images{
+background-image:url('../images/silhouette-dance-swing-lindy-hop-silhouette-76196bee605cca78c1eac589eba51219.png'),
+  url('../images/Hintergrund.jpg');
+background-repeat: no-repeat, repeat; 
+background-position: left top, left top;}
+.formular{background-color: #ae9dc1bc;}
+p.formular{text-align: center;
+font-size: 10pt;}
+div#footer{background:rgba(137, 114, 154, 0.75);}
+div#footer p{margin:0;padding:5px 10px}
+div#container{float:center;width:600px;margin:0 auto;}
+div#content{float:center;width:600px; background-color: rgba(137, 114, 154, 0.75);}
+div#footer{clear:both;width:100%}
+#aufforderung{font-size: 12pt; margin-top:12pt;}
+#immer{background-color:rgba(137, 114, 154, 0,75);}

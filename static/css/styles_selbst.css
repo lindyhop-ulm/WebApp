@@ -1,0 +1,22 @@
+h1{text-align:center; 
+    font-family:broadway;
+    font-size: 36pt;
+    margin-bottom: 3cm;
+ text-decoration: underline;
+  background-color:rgb(117, 87, 134);
+  margin-left:15cm; margin-right: 15cm;}
+h2{ font-family:broadway;
+background-color: rgb(174, 155, 189);
+text-align:center; font-size:26pt;}
+p{text-align:left; 
+    color: rgb(13, 13, 13); font-size: 14pt; 
+    font-family:Arial, Helvetica, sans-serif;
+    background-color:  rgb(174, 155, 189);}
+body{background-color: rgb(174, 155, 189);
+    background-image: url('../images/silhouette-dance-swing-lindy-hop-silhouette-76196bee605cca78c1eac589eba51219.png'),url('../images/Hintergrund.jpg');
+    background-repeat: no-repeat, repeat-x; background-position: right top;}
+ul{text-align:left;  color:rgb(12, 13, 15); margin-top:1cm; margin-bottom: 3cm; margin-left:15cm; margin-right: 15cm;}
+li{margin-bottom: 2cm;}
+a{color:rgb(74, 6, 84);}
+#erklärung{font-size: 10pt;}
+#link{text-align:center;}

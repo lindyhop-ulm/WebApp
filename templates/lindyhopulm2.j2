@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Lindy Hop Ulm</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles2.css') }}" />
+</head>
+<body>
+<div id="container">
+<div id="header"><h1 style="font-size:48pt">Lindy Hop</h1></div>
+  <div id="wrapper">
+    <div id="content">
+        <h2 style="margin-bottom: 1cm", style="font-size:40pt">in Ulm</h2>
+        <h3>Allgemeine Informationen:</h3>
+            <p>Lindy Hop ist ein wilder Paartanz aus den 20er Jahren. Es wird zu Swing, vorwiegend zu Jazz getanzt.</p>
+            <p>Der Tanz hat bis heute überlebt und wird von Menschen in der ganzen Welt getanzt und gefeiert.</p>
+            <p id='link'><a href="https://www.youtube.com/watch?v=VmvKrPUo97E">Video des Moskauer Christmas-Swingdance</a></p>
+            <h3>Über uns:</h3>
+            <p>Wir sind eine Gruppe von Swing-begeisterten und wollen auch hier in Ulm eine "Swingszene" etablieren,</p>
+            <p>wie es sie in nahezu jeder Stadt gibt.</p>
+            <p>Dazu gehören regelmäßige sogenannte "Socials", sozusagen Tanzparties, bei denen musik gespielt wird </p>
+            <p>und nach belieben getanzt werden kann,</p>
+            <p>sowie regelmäßige Kurse, die in Ulm an der Volkshochschule angeboten werden. </p>
+            <p>Außerdem treffen wir uns, wann immer es Jazz-Veranstaltungen in der Umgebung gibt</p> 
+            <p>und fahren ab und an gemeinsam zu Tanzabenden in anderen Städten, wie Stuttgart oder Augsburg.</p>
+            <p></p>
+
+    </div>
+  </div>
+  <div id="navigation">
+    <p><strong>Menü</strong></p>
+    <ul>
+      <li><a href="/veranstaltungen">Aktuelle Veranstaltungen in Ulm</a></li>
+      <li><a href="/kurse">Kurse</a></li>
+      <li><a href="/veranstaltungen">Weiterer Link - Fotos</a></li>
+      <li><a href="/veranstaltungen">Weiterer Link</a></li>
+    </ul>
+  </div>
+  <div id="extra">
+    <p><strong>Kontakt:</strong></p>
+    <p>Hier könnten Kontaktinformationen stehen! Wie e-Mailadressen, Fb-Gruppe, Insta, Ansprechpartner, Adresse Verschwörhaus etc.</p>
+  </div>
+  <div id="footer">
+    <p>Footer</p>
+  </div>
+</div>
+</body>
+</html>
+
+<style>
+h1,h2{text-align:center; 
+    font-family:broadway;}
+h3{text-align:center; font-family: broadway; color:white;}
+p{text-align:left; color: white;}
+body{background-color:rgb(219, 101, 101);
+    background-image: url( {{url_for('static', filename='images/iron-horse-music-hall-ballroom-dance-swing-film-dancing-1f6edbd31b5721748292a6e919539ac9.png')}});
+    background-repeat: no-repeat;
+    background-size: 500px, 300px;}
+</style>

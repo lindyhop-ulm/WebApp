@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<head>
+<title>Veranstaltungen</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}" />
+</head>
+<html>
+<body>
+<div class="background-images">
+  <div id="navigator">
+      <p><a href='/'>Startseite</a></p>
+  </div>
+<div id="container">
+    <h1>Aktuelle Veranstaltungen in Ulm und Umgebung</h1>
+  <div id="wrapper">
+    <div id="content">
+    <h2>Regemäßige Veranstaltungen:</h2>
+    <p id="unter3">Tanzabend:</p>
+      <div id="immer">
+        <p><strong>Montags um 18Uhr</strong></p>
+        <p><strong>im Verschwörhaus</strong></p>
+        <p><strong>Weinhof 9</strong></p>
+        <p><strong>89073 Ulm</strong></p>
+        <p id="aufforderung"><strong>Kommt vorbei und tanzt mit uns!!</strong></p>
+      </div>
+       <div id="posts">
+       <h2>Aktuelle Veranstaltungen:</h2>
+       <ul>
+            {%for post in posts%}
+              {%if post[link]== ''%}
+                <p><li><strong>{{post['id']}}   {{post['name']}}   {{post['link']}}   {{post['stadt']}}   {{post['datum']}}</strong></li></p>
+              {%else%}
+                <p><li><strong>{{post['id']}} - {{post['name']}} - <a href="{{post['link']}}" target="_blank">Weitere Informationen</a> - {{post['stadt']}} - {{post['datum']}}</strong></li></p>
+              {%endif%}
+            {%endfor%}
+        </ul>
+        <div class='formular'>
+        <h2><strong>Neue Veranstaltung einfügen:</strong></h2>
+    <form action="/veranstaltungen" method="POST">
+        <p>Name der Veranstaltung: <input type=text name='name'></p>
+        <p>Weitere Informationen unter: <input type=text name='link'><em>bitte kompletten Link einfügen</em></p>
+        <p>Stadt: <input type=text name='stadt'></p>
+        <p><strong>Wann findet die Veranstaltung statt?</strong></p>
+        <p>Tag:<input type=text name='tag' value="TT">Monat:<input type=text name='monat' value="MM">Jahr:<input type=text name='jahr' value="JJJJ">Uhrzeit:<input type=text name='uhrzeit' value="HH"><em></em>- bitte nur volle Stunden eintragen</em></p>
+        <p><em>-Hinweis: Hier muss ein Datum stehen, sonst wird der Post automatisch gelöscht!-</em></p>
+        <p><input type=submit value='Senden'></p>
+    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+      <div id="footer">
+    <p>Footer</p>
+    </div>
+  </div>
+</body>
+</html>
