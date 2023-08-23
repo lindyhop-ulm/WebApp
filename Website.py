@@ -5,7 +5,20 @@ import time
 import html
 import os
 
-#Zugangsdaten DB
+zugangsdaten={}
+
+os.chdir('..')
+os.chdir('Zugangsdaten_geheim')
+if os.path.isfile('Zugangsdaten_MongoDB.txt'):
+    with open ('Zugangsdaten_MongoDB.txt', 'r') as fp:
+        for zeile in fp:
+            zugang=zeile.strip().split('=')
+            zugangsdaten[zugang[0]]=zugang[1]
+
+
+DB_URL=zugangsdaten['DB_URL']
+DB_USER=zugangsdaten['DB_USER']
+DB_PASSWORD=zugangsdaten['DB_PASSWORD']
 
 client=MongoClient(DB_URL, username= DB_USER, password=DB_PASSWORD)
 db=client['meine_db']
@@ -65,7 +78,7 @@ def veranstaltungen():
                 link=sanitisize_input(request.form.get('link', '-'))
                 linkval=link_valid(link)
                 if linkval == 'invalid':
-                    return render_template('fehlermeldung_link.j2', posts=posts)
+                    return render_template('veranstaltungen.j2', posts=posts, linkval=linkval)
                 tag=sanitisize_input(request.form.get('tag','-'))
                 monat=sanitisize_input(request.form.get('monat','-'))
                 jahr=sanitisize_input(request.form.get('jahr','-'))
@@ -73,7 +86,7 @@ def veranstaltungen():
                 datum=datum_anpassen(tag, monat, jahr, uhrzeit)
                 print(datum)
                 if datum == 'Eingabe fehlerhaft':
-                  return render_template('fehlermeldung_datum.j2', posts=posts)
+                  return render_template('veranstaltungen.j2', posts=posts, datum=datum)
                 stadt=sanitisize_input(request.form.get('stadt', '-'))
                 col_id.update_one({}, {'$inc':{'id':1}})
                 res_id=col_id.find(projection={'_id':0})
@@ -85,7 +98,8 @@ def veranstaltungen():
                 posts=list(res)
                 return render_template('veranstaltungen.j2', posts=posts)
       else:
-        return render_template('fehlermeldung_name.j2', posts=posts)
+        name='leer'
+        return render_template('veranstaltungen.j2', posts=posts, name=name)
   else:
     return render_template('veranstaltungen.j2', posts=posts)
 

@@ -38,10 +38,21 @@
         <h2><strong>Neue Veranstaltung einfügen:</strong></h2>
     <form action="/veranstaltungen" method="POST">
         <p>Name der Veranstaltung: <input type=text name='name'></p>
-        <p>Weitere Informationen unter: <input type=text name='link'><em>bitte kompletten Link einfügen</em></p>
+        {%if name == "leer"%}
+        <p style="color: red"><em>Bitte Name Eingeben!</em></p>
+        {%endif%}
+        <p>Weitere Informationen unter: <input type=text name='link'></p>
+        {%if linkval == 'invalid'%}
+        <p style="color:red"><em>Link fehlerhaft! bitte kompletten Link einfügen</em></p>
+        {%else%}
+        <p><em>bitte kompletten Link einfügen</em></p>
+        {%endif%}
         <p>Stadt: <input type=text name='stadt'></p>
         <p><strong>Wann findet die Veranstaltung statt?</strong></p>
         <p>Tag:<input type=text name='tag' value="TT">Monat:<input type=text name='monat' value="MM">Jahr:<input type=text name='jahr' value="JJJJ">Uhrzeit:<input type=text name='uhrzeit' value="HH"><em></em>- bitte nur volle Stunden eintragen</em></p>
+        {%if datum=="Eingabe Fehlerhaft"%}
+        <p style="color:red"><em>Datum Fehlerhaft!</em></p>
+        {%endif%}
         <p><em>-Hinweis: Hier muss ein Datum stehen, sonst wird der Post automatisch gelöscht!-</em></p>
         <p><input type=submit value='Senden'></p>
     </form>
