@@ -1,0 +1,231 @@
+*{margin: 0;
+  padding: 0;}
+html{margin:0; padding:0}
+body{font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   text-align:center;
+   margin:0;
+   padding:0;
+  height: 100%;}
+p{margin:0; border-color:white;
+  text-align:center; color: white;
+  font-size: 10pt;}
+a{padding:5px; ;
+text-decoration:underline; 
+color:white}
+h1{color: black;
+  text-align:center; 
+  font-family:Limelight;
+  font-size: 28pt;
+  text-decoration: underline;
+margin: 0 auto;
+width: 600px;
+background-color:#a68bc0;}
+h2{text-align:center; 
+  font-family:Limelight;
+  font-size: 20pt;
+margin-bottom: 1cm; margin-top:1cm;
+color:white;}
+#unter3{text-align: center;
+    font-family: Limelight; 
+    font-size: 18pt;
+    text-decoration: underline; 
+      margin-bottom: 20pt;
+    color:white;}
+div#header{text-align: center;}
+div#navigator{float:right; width:100px; background-color:#a68bc0bc; margin-top: 10px;}
+div#navigator p{text-align:left; font-size: 12pt;}
+button {
+  background-color:#996cc3bc;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+}
+button:hover {background-color: #73449ebc;}
+div#container{text-align:center;}
+div#content p{text-align:center}
+div#posts{text-align:center;
+       margin-top:0cm;}
+ul{padding:0; 
+ list-style-type:none;
+  text-align:center;  
+  color:rgb(12, 13, 15); 
+  margin-top:1cm; 
+  margin-bottom: 3cm;}
+li{margin-bottom:5px;
+  text-align:center;
+  font-size:12pt;}
+body{
+background-image:url('../images/silhouette-dance-swing-lindy-hop-silhouette-76196bee605cca78c1eac589eba51219.png'),
+  url('../images/Hintergrund.jpg');
+background-repeat: no-repeat, repeat; 
+background-position: left top, left top;
+}
+div#footer{background:rgba(137, 114, 154, 0.75);}
+div#footer p{margin:0;padding:5px 10px}
+div#container{width:600px;margin:0 auto; min-height: 100vh;}
+div#content{margin: 70px auto 0 auto; width:500px; background-color: rgba(137, 114, 154, 0.75);height: auto; padding: 0; min-height: 100vh;}
+div#footer{clear:both;width:100%; height: 12pt;}
+#aufforderung{font-size: 12pt; margin-top:12pt;}
+#immer{background-color: rgba(137, 114, 154, 0.75);}
+.tab_events table{text-align:center; margin: 1cm auto; color:white; max-width: 600px;}
+.tab_events td{padding: 10px;}
+div#extra{background: #73449ebc; padding: 10px}
+p{margin:0 auto 5px auto}
+.dropbtn {
+  background-color: #a68bc0;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color:rgba(137, 114, 154, 0.75);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover {background-color: #a68bc0}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown:hover .dropbtn {
+  background-color: #73449ebc;}
+
+.tab_menü{float: right;}
+
+
+
+
+@media (max-width: 760px) {
+  *{margin: 0;
+    padding: 0;}
+  html{margin:0; padding:0}
+  body{font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     text-align:center;
+     margin:0;
+     padding:0;
+    height: 100%;
+  max-width: 100vw;}
+  p{margin:0 auto 5px auto; border-color:white;
+    text-align:center; color: white;
+    font-size: 14pt;}
+  a{padding:0;
+  text-decoration:underline; 
+  color:white}
+  h1{color: black;
+    text-align:center; 
+    font-family:Limelight;
+    font-size: 20pt;
+    text-decoration: underline;
+  margin-bottom: 0cm;
+  padding: 0;
+  max-width: 100%;
+  background-color:#a68bc0;}
+  h2{text-align:center; 
+    font-family:Limelight;
+    font-size: 22pt;
+  margin-bottom: 1cm; margin-top:1cm;
+  color:white;}
+  #unter3{text-align: center;
+      font-family: Limelight; 
+      font-size: 20pt;
+      text-decoration: underline; 
+        margin-bottom: 20pt;
+      color:white;}
+  div#header{text-align: center;}
+  div#navigator{float:right; max-width:100px; background-color:#a68bc0bc; margin-top: 10px;}
+  div#navigator p{text-align:left; font-size: 16pt;}
+  button {
+    background-color:#996cc3bc;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+  button:hover {background-color: #73449ebc;}
+  div#container{text-align:center;}
+  div#content p{text-align:center}
+  div#posts{text-align:center;
+         margin-top:0cm;}
+  ul{padding:0;
+   list-style-type:none;
+    text-align:center;  
+    color:rgb(12, 13, 15); 
+    margin-top:1cm; 
+    margin-bottom: 3cm;}
+  li{margin-bottom:5px;
+    text-align:center;
+    font-size:14pt;}
+  body{
+  background-image:url('../images/silhouette-dance-swing-lindy-hop-silhouette-76196bee605cca78c1eac589eba51219.png'),
+    url('../images/Hintergrund.jpg');
+  background-repeat: no-repeat, repeat; 
+  background-position: center 3cm , left top;
+  max-width: 100vw;}
+  div#footer{background:rgba(137, 114, 154, 0.75);}
+  div#footer p{margin:0;padding:0}
+  div#container{float:none; max-width:100vw;margin:0; min-height: 100vh;}
+  div#content{margin: 70 auto 0 auto; max-width:90vw; background-color: rgba(137, 114, 154, 0.75);height: auto; padding:0; min-height: 100vh;}
+  div#footer{clear:both;max-width:100vw; height: 12pt;}
+  #aufforderung{font-size: 20pt; margin-top:30pt;}
+  #immer{background-color: rgba(137, 114, 154, 0.75);}
+  #link{text-align:center;}
+  .tab_events table{text-align:center; margin: 1cm auto; color:white; max-width: 600px;}
+  .tab_events td{padding: 5px; font-size:12px}
+  div#extra{background: #73449ebc; padding: 5px}
+  p{margin:0 auto 0 auto}
+  .dropbtn {
+    background-color: #a68bc0;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:rgba(137, 114, 154, 0.75);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  .dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  .dropdown-content a:hover {background-color: #a68bc0}
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  .dropdown:hover .dropbtn {
+    background-color: #73449ebc;}
+  
+  .tab_menü{float: left;}
+}
