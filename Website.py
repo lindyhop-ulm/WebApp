@@ -3,8 +3,9 @@ from flask import Flask, request, render_template
 from datetime import datetime as dt
 import time
 import html
+import os
 
-#Zugangsdaten MongoDB
+#Zugangsdaten DB
 
 client=MongoClient(DB_URL, username= DB_USER, password=DB_PASSWORD)
 db=client['meine_db']
