@@ -1,17 +1,53 @@
 <!DOCTYPE HTML>
 <head>
+<!DOCTYPE HTML>
+<head>
 <title>Veranstaltungen</title>
-<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="content-Type" content="text/html; utf-8" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta name="robots" content="INDEX,FOLLOW" />
+<meta http-equiv="content-Language" content="de" />
+<meta name="description" content="Homepage der Lindy Hop Community in Ulm. Zur Information über den Tanz, unsere Community und aktuelle Lindy Hop, Swing und Jazz Veranstaltungen in Ulm" />
+<meta name="keywords" content="lindy, hop, lindy hop, lindyhop, jazz, swing, veranstaltungen, tanzen in ulm, swing in ulm, lindy hop in ulm, community in ulm, tanzgruppe, ulm, gruppe, spaß, events, kurse, 20er jahre, charleston" />
+<meta name="author" content="Linda Tischer" />
+<meta name="publisher" content="Lindy Hop Ulm" />
+<meta name="copyright" content="Lindy Hop Ulm" />
+<meta name="audience" content="Alle" />
+<meta name="page-type" content="Beschreibung, Anleitung" />
+<meta name="page-topic" content="Tanzen, Lindy Hop, Swing" />
+<meta http-equiv="Reply-to" content="lindyhop-ulm@web.de" />
+<meta name="expires" content="86400" />
+<meta name="revisit-after" content="2 days" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Limelight">
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles_veranstaltungen.css') }}" />
 </head>
 <html>
 <body>
 <div class="background-images">
-  <div id="navigator">
-      <p><a href='/'>Startseite</a></p>
-  </div>
 <div id="container">
     <h1>Aktuelle Veranstaltungen in Ulm und Umgebung</h1>
+    <div class="tab_menü">
+      <table>
+      <tr>
+        <td><div class="dropdown">
+      <button class="dropbtn">Menü</button>
+      <div class="dropdown-content">
+        <a href="/kurse">Kurse</a>
+        <a href="/">Startseite</a>
+      </div>
+    </div>
+    </td>
+    <td>
+      <div id="extra">
+        <p><strong>Kontakt:</strong></p>
+        <p>lindyhop-ulm@web.de</p>
+        <p></p>
+      </div>
+      </td>
+    </tr>
+    </table>
+  </div> 
   <div id="wrapper">
     <div id="content">
     <h2>Regemäßige Veranstaltungen:</h2>
@@ -25,15 +61,30 @@
       </div>
        <div id="posts">
        <h2>Aktuelle Veranstaltungen:</h2>
-       <ul>
+       <div class="tab_events">
+       <table>
             {%for post in posts%}
               {%if post[link]== ''%}
-                <p><li><strong>{{post['id']}}   {{post['name']}}   {{post['link']}}   {{post['stadt']}}   {{post['datum']}}</strong></li></p>
+              <tr>
+                <td>{{post['id']}}</td>
+                <td>{{post['name']}}</td>
+                <td>{{post['link']}}</td>
+                <td>{{post['stadt']}}</td>
+                <td>{{post['datum']}}</td>
+                </tr>
               {%else%}
-                <p><li><strong>{{post['id']}} - {{post['name']}} - <a href="{{post['link']}}" target="_blank">Weitere Informationen</a> - {{post['stadt']}} - {{post['datum']}}</strong></li></p>
+              <tr>
+                <td>{{post['id']}}</td>
+                <td>{{post['name']}}</td>
+                <td><a href="{{post['link']}}" target="_blank">Weitere Informationen</a></td>
+                <td>{{post['stadt']}}</td>
+                <td>{{post['datum']}}</td>
+                </tr>
               {%endif%}
             {%endfor%}
-        </ul>
+        </table>
+        </div>
+        </div>
         <div class='formular'>
         <h2><strong>Neue Veranstaltung einfügen:</strong></h2>
     <form action="/veranstaltungen" method="POST">
@@ -57,13 +108,29 @@
         <p><input type=submit value='Senden'></p>
     </form>
                     </div>
+                
+            <div id="online">
+       <p id="unter3">Weitere Veranstaltungen:</p>
+       <ul>
+        <li>
+          <p>Auf Facebook:</p>
+        <p><a href="https://www.facebook.com/profile.php?id=61550588062149" target="_blank">Facebookprofil</a></p>
+        <p><a href="https://www.facebook.com/groups/2023037144424156/" target="_blank">Facebookgruppe</a></p>
+      </li>
+      <li>
+        <p>Auf Instagramm:</p>
+          <p><a href="https://www.instagram.com/lindyhopulm/" target="_blank">Insta</a></p>
+      </li>
+      <li><p>Oder schreib uns eine e-Mail an: lindyhop-ulm@web.de</p></li>
+        </ul>
+      </div>      
                 </div>
-            </div>
-        </div>
-    </div>
+                </div>
+
       <div id="footer">
     <p>Footer</p>
-    </div>
   </div>
+    </div>
+    </div>
 </body>
 </html>
