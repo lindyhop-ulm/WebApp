@@ -5,6 +5,7 @@ import time
 import html
 import os
 
+
 zugangsdaten={}
 
 os.chdir('..')
@@ -29,6 +30,23 @@ print(client.list_database_names())
 
 def sanitisize_input (input_str):
     sanitized_str=html.escape(input_str)
+    sanitized_str=str(sanitized_str)
+    zeichen=list(sanitized_str)
+    if '$' in zeichen:
+        while '$' in zeichen:
+          zeichen.remove('$')
+          sanitized_str= ''.join(zeichen)
+    if "'" in zeichen:
+        while "'" in zeichen:
+          zeichen.remove("'") 
+          sanitized_str=''.join(zeichen)
+    if '{' in zeichen:
+        while '{' in zeichen:
+          zeichen.remove('{')
+    if 'or' in zeichen:
+        while 'or' in zeichen:
+            zeichen.remove('or')
+    print (sanitized_str)
     return sanitized_str
 
 def datum_anpassen (tag, monat, jahr, uhrzeit):
@@ -83,7 +101,7 @@ def veranstaltungen():
                 monat=sanitisize_input(request.form.get('monat','-'))
                 jahr=sanitisize_input(request.form.get('jahr','-'))
                 uhrzeit=sanitisize_input(request.form.get('uhrzeit','-'))
-                datum=datum_anpassen(tag, monat, jahr, uhrzeit)
+                datum=(datum_anpassen(tag, monat, jahr, uhrzeit))
                 print(datum)
                 if datum == 'Eingabe fehlerhaft':
                   return render_template('veranstaltungen.j2', posts=posts, datum=datum)
