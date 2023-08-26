@@ -4,6 +4,7 @@ from datetime import datetime as dt
 import time
 import html
 import os
+from urllib.parse import urlparse
 
 
 zugangsdaten={}
@@ -43,11 +44,48 @@ def sanitisize_input (input_str):
     if '{' in zeichen:
         while '{' in zeichen:
           zeichen.remove('{')
-    if 'or' in zeichen:
-        while 'or' in zeichen:
-            zeichen.remove('or')
+          sanitized_str=''.join(zeichen)
+    if '}' in zeichen:
+        while '}' in zeichen:
+            zeichen.remove('}')
+            sanitized_str=''.join(zeichen)
+    sanitized_str=sanitized_str.strip()
+    if '.' in sanitized_str:
+        while '.' in sanitized_str:
+            zeichen.remove('.')
+            sanitized_str=''.join(zeichen)
     print (sanitized_str)
     return sanitized_str
+
+def link_valid(input_link):
+    sanitized_str=html.escape(input_link)
+    sanitized_str=str(sanitized_str)
+    zeichen=list(sanitized_str)
+    if '$' in zeichen:
+        while '$' in zeichen:
+          zeichen.remove('$')
+          sanitized_str= ''.join(zeichen)
+    if "'" in zeichen:
+        while "'" in zeichen:
+          zeichen.remove("'") 
+          sanitized_str=''.join(zeichen)
+    if '{' in zeichen:
+        while '{' in zeichen:
+          zeichen.remove('{')
+          sanitized_str=''.join(zeichen)
+    if '}' in zeichen:
+        while '}' in zeichen:
+            zeichen.remove('}')
+            sanitized_str=''.join(zeichen)
+    sanitized_str=sanitized_str.strip()
+    print (sanitized_str)
+    try:
+        result = urlparse(sanitized_str)
+        if all([result.scheme, result.netloc]):
+            return sanitized_str
+        return 'invalid'
+    except:
+        return 'invalid'   
 
 def datum_anpassen (tag, monat, jahr, uhrzeit):
     if len(tag) > 2 or len(monat) > 2 or len(jahr) > 4 or len(uhrzeit) > 2:
@@ -64,15 +102,15 @@ def datum_anpassen (tag, monat, jahr, uhrzeit):
         return 'Eingabe fehlerhaft'
     
 
-def link_valid(link):
-    if link[0:8]=='https://':
-      return link
-    elif link[0:3]== 'www':
-        return link
-    elif link == '':
-        return link
-    else:
-        return 'invalid'
+# def link_valid(link):
+#     if link[0:8]=='https://':
+#       return link
+#     elif link[0:3]== 'www':
+#         return link
+#     elif link == '':
+#         return link
+#     else:
+#         return 'invalid'
 
 app=Flask(__name__)
 
