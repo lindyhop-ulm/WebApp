@@ -58,33 +58,36 @@ def sanitisize_input (input_str):
     return sanitized_str
 
 def link_valid(input_link):
-    sanitized_str=html.escape(input_link)
-    sanitized_str=str(sanitized_str)
-    zeichen=list(sanitized_str)
-    if '$' in zeichen:
+    if input_link=='':
+        return input_link
+    else:
+      sanitized_str=html.escape(input_link)
+      sanitized_str=str(sanitized_str)
+      zeichen=list(sanitized_str)
+      if '$' in zeichen:
         while '$' in zeichen:
           zeichen.remove('$')
           sanitized_str= ''.join(zeichen)
-    if "'" in zeichen:
+      if "'" in zeichen:
         while "'" in zeichen:
           zeichen.remove("'") 
           sanitized_str=''.join(zeichen)
-    if '{' in zeichen:
+      if '{' in zeichen:
         while '{' in zeichen:
           zeichen.remove('{')
           sanitized_str=''.join(zeichen)
-    if '}' in zeichen:
+      if '}' in zeichen:
         while '}' in zeichen:
             zeichen.remove('}')
             sanitized_str=''.join(zeichen)
-    sanitized_str=sanitized_str.strip()
-    print (sanitized_str)
-    try:
+      sanitized_str=sanitized_str.strip()
+      print (sanitized_str)
+      try:
         result = urlparse(sanitized_str)
         if all([result.scheme, result.netloc]):
             return sanitized_str
         return 'invalid'
-    except:
+      except:
         return 'invalid'   
 
 def datum_anpassen (tag, monat, jahr, uhrzeit):
@@ -127,12 +130,12 @@ def veranstaltungen():
   col.delete_many({'datum': {'$lt': jetzt}})
   res=col.find(projection={'_id':0})
   posts=list(res)
+  print(posts)
   if request.method == 'POST':
       if request.form['name'] != '':
                 name=sanitisize_input(request.form['name'])
                 print(name)
-                link=sanitisize_input(request.form.get('link', '-'))
-                linkval=link_valid(link)
+                linkval=link_valid(request.form.get('link', '-'))
                 if linkval == 'invalid':
                     return render_template('veranstaltungen.j2', posts=posts, linkval=linkval)
                 tag=sanitisize_input(request.form.get('tag','-'))

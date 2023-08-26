@@ -64,21 +64,32 @@
        <div class="tab_events">
        <table>
             {%for post in posts%}
-              {%if post[link]== ''%}
+              {%if post['link']== ''%}
               <tr>
                 <td>{{post['id']}}</td>
                 <td>{{post['name']}}</td>
-                <td>{{post['link']}}</td>
+                
                 <td>{{post['stadt']}}</td>
                 <td>{{post['datum']}}</td>
+                </tr>
+                <tr style="text-align:center">
+                <td> </td>
+                <td>{{post['link']}}</td>
+                <td> </td>
+                <td> </td>
                 </tr>
               {%else%}
               <tr>
                 <td>{{post['id']}}</td>
                 <td>{{post['name']}}</td>
-                <td><a href="{{post['link']}}" target="_blank">Weitere Informationen</a></td>
                 <td>{{post['stadt']}}</td>
                 <td>{{post['datum']}}</td>
+                </tr>
+                <tr style="text-align:center">
+                <td> </td>
+                <td><a href="{{post['link']}}" target="_blank">Weitere Informationen</a></td>
+                <td> </td>
+                <td> </td>
                 </tr>
               {%endif%}
             {%endfor%}
