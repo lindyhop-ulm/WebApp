@@ -29,7 +29,7 @@ col_id=db['aktuelleID']
 
 print(client.list_database_names())
 
-def sanitisize_input (input_str):
+def sanitise_input (input_str):
     sanitized_str=html.escape(input_str)
     sanitized_str=str(sanitized_str)
     zeichen=list(sanitized_str)
@@ -133,20 +133,20 @@ def veranstaltungen():
   print(posts)
   if request.method == 'POST':
       if request.form['name'] != '':
-                name=sanitisize_input(request.form['name'])
+                name=sanitise_input(request.form['name'])
                 print(name)
                 linkval=link_valid(request.form.get('link', '-'))
                 if linkval == 'invalid':
                     return render_template('veranstaltungen.j2', posts=posts, linkval=linkval)
-                tag=sanitisize_input(request.form.get('tag','-'))
-                monat=sanitisize_input(request.form.get('monat','-'))
-                jahr=sanitisize_input(request.form.get('jahr','-'))
-                uhrzeit=sanitisize_input(request.form.get('uhrzeit','-'))
+                tag=sanitise_input(request.form.get('tag','-'))
+                monat=sanitise_input(request.form.get('monat','-'))
+                jahr=sanitise_input(request.form.get('jahr','-'))
+                uhrzeit=sanitise_input(request.form.get('uhrzeit','-'))
                 datum=(datum_anpassen(tag, monat, jahr, uhrzeit))
                 print(datum)
                 if datum == 'Eingabe fehlerhaft':
                   return render_template('veranstaltungen.j2', posts=posts, datum=datum)
-                stadt=sanitisize_input(request.form.get('stadt', '-'))
+                stadt=sanitise_input(request.form.get('stadt', '-'))
                 col_id.update_one({}, {'$inc':{'id':1}})
                 res_id=col_id.find(projection={'_id':0})
                 for element in res_id:
