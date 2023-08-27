@@ -115,10 +115,12 @@ def datum_anpassen (tag, monat, jahr, uhrzeit):
 #     else:
 #         return 'invalid'
 
-app=Flask(__name__)
-
 if len(list(col_id.find()))==0:
   col_id.insert_one({'id':0})
+if len(list(col.find())) ==0:
+   col_id.update_one({}, {'$set':{'id':0}})
+
+app=Flask(__name__)
 
 @app.route('/')
 def index():
